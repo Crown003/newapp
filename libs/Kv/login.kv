@@ -1,0 +1,91 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:set main_color get_color_from_hex("d73d6c")
+#:set secondary_color get_color_from_hex("d57276")
+#:set teratory_color get_color_from_hex("d6c2bc")
+#:set main_text_color get_color_from_hex("c0cccc")
+#:set secondary_text_color get_color_from_hex("65b2c6")
+<LoginPage>:
+	id:login
+	name:"LoginPage"
+	on_pre_enter:
+		username.text = ""
+		Password.text = ""
+	MDBoxLayout:
+		orientation:"vertical"
+		size_hint:1,1
+		md_bg_color:get_color_from_hex('#FFFFFF')
+		MDBoxLayout:
+			size_hint:1,.6
+			pos_hint:{'center_y':.95,'center_x':.5}
+			md_bg_color:get_color_from_hex('#2196f3')	
+			AnchorLayout:
+				Image:
+					source:"assets/vidiya.png"
+					size_hint:None,None
+					height:"200dp"
+					width:"250dp"
+			AnchorLayout:
+				size_hint:None,1
+				width:"280dp"
+				MDLabel:
+					color:(1,1,1,1)
+					text:"Saraswati Vidiya\n         Mandir"
+					font_size:"30dp"
+					font_name:"Ubuntu/Ubuntu-Bold"
+		MDBoxLayout:
+			orientation:'vertical'
+			padding:20
+			MDLabel:
+				text:"Login"
+				halign:"left"
+				font_name:"Ubuntu/Ubuntu-Bold"
+				font_size:"30sp"
+			MDFloatLayout:
+				size_hint:1,None
+				height:"420dp"
+				orientation:"vertical"
+				spacing:18
+				MDTextField:
+					id:username
+					size_hint:None,None
+					text:""
+					height:"40sp"
+					width:"350dp"
+					hint_text:"Username or Enrollment No"
+					pos_hint:{"center_y":0.8,"center_x":.5}
+					color_mode:"custom"
+					line_color_normal:(1,1,1,1)
+					line_color_focus:get_color_from_hex('#2196f3')
+				MDTextField:
+					id:Password
+					password:True
+					text:""
+					size_hint:None,None
+					height:"40sp"
+					width:"350dp"
+					hint_text:"Password"
+					pos_hint:{"center_y":0.65,"center_x":.5}
+					color_mode:"custom"
+					line_color_normal:(1,1,1,1)
+					line_color_focus:get_color_from_hex('#2196f3')
+				MDIconButton:
+					id:icon
+					icon:"eye-off"
+					pos_hint:{"center_y":0.659,"center_x":.9}
+					theme_text_color: "Custom"
+					text_color:get_color_from_hex('#2196f3')
+					on_release:
+						Password.password = False if Password.password == True else True
+						icon.icon = "eye" if icon.icon=="eye-off" else "eye-off"
+				MDFillRoundFlatButton:
+					id:loginbtn
+					text:"login"
+					size_hint:.7,.1
+					md_bg_color:get_color_from_hex('#2196f3')
+					font_name:"Ubuntu/Ubuntu-Bold"
+					pos_hint:{"center_y":0.4,"center_x":.5}
+					on_release:
+						root.loginUser(username,Password)
+						
+						
+						

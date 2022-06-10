@@ -1,0 +1,103 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+<Add_Student>:
+	MDFloatLayout:
+		size_hint:1,1
+		minimum_height:1
+		md_bg_color:get_color_from_hex('#ff9800')
+		MDIconButton:
+			icon:"arrow-left"
+			theme_text_color: 'Custom'
+			text_color: 3,3,3,1
+			pos_hint:{"center_x":.08,"center_y":.95}
+			ripple_scale:0
+			on_release:
+				root.manager.current = "Teachers_interface"
+				root.manager.transition.direction = "right"
+		MDLabel:
+			text:"Add Student"
+			theme_text_color:"Custom"
+			text_color:get_color_from_hex('#ffffff')
+			font_name:"Ubuntu/Ubuntu-Bold"
+			font_size:"24dp"
+			pos_hint:{"center_x":.70,"center_y":.95}
+		ScrollView: 
+            size_hint_y: .9
+            do_scroll_y: True
+            md_bg_color:1,0,0,.4
+			MDGridLayout:
+				cols:1
+				size_hint:1,None
+				pos_hint:{"top":.9}
+				height:self.minimum_height
+				spacing:30
+				padding:20
+				MDTextField:
+					text:"Enrollment No"
+					hint_text:"Enrollment No" 
+					
+					text_color:0,0,0,1
+					font_name:"Ubuntu/Ubuntu-Medium"
+					hint_text_mode:"on_focus"
+					disabled:False
+					color_mode:"custom"
+					line_color_normal:0,0,0,1
+					line_color_focus:get_color_from_hex("000000")
+				MDTextField:
+					text:"Name"
+					hint_text:"Name" 
+					
+					text_color:0,0,0,1
+					font_name:"Ubuntu/Ubuntu-Medium"
+					hint_text_mode:"on_focus"
+					disabled:False
+					color_mode:"custom"
+					line_color_normal:0,0,0,1
+					line_color_focus:get_color_from_hex("00dbff")
+				MDTextField:
+					text:"Class"
+					hint_text:"Class"
+					 
+					text_color:0,0,0,1
+					font_name:"Ubuntu/Ubuntu-Medium"
+					hint_text_mode:"on_focus"
+					disabled:False
+					color_mode:"custom"
+					line_color_normal:0,0,0,1
+					line_color_focus:get_color_from_hex("00dbff")
+				MDTextField:
+					text:"Section"
+					hint_text:"Section" 
+					
+					text_color:0,0,0,1
+					font_name:"Ubuntu/Ubuntu-Medium"
+					hint_text_mode:"on_focus"
+					disabled:False
+					color_mode:"custom"
+					line_color_normal:0,0,0,1
+					line_color_focus:get_color_from_hex("00dbff")
+				MDTextField:
+					id:Phone
+					text:"Phone"
+					hint_text:"Phone" 
+					
+					text_color:0,0,0,1
+					font_name:"Ubuntu/Ubuntu-Medium"
+					hint_text_mode:"on_focus"
+					disabled:False #if Phone.max_text_length.text <= 10 else True
+					color_mode:"custom"
+					max_text_length:10
+					line_color_normal:0,0,0,1
+					line_color_focus:get_color_from_hex("00dbff")
+				AnchorLayout:
+					anchor_x:"center"
+					MDFillRoundFlatButton:
+						text:"[b]create[/b]"
+						theme_text_color: "Custom"
+						text_color: 1, 0, 0, 1
+						radius:[20]
+						font_size:"18dp"
+						md_bg_color:.9,.9,.9,.9
+						markup:True
+					#on_release:
+						#root.createUser()
+					
