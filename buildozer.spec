@@ -36,7 +36,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,Kivy==2.0.0,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
+requirements = python3,Kivy==2.0.0,android,threading,akivymd==1.2.1,android==1.0,DateTime==4.4,kivymd==0.104.2,KivyMD-Components==0.1.6,kivymd-extensions==1.0.0,kivymd-extensions.akivymd==1.2.6,pillow==9.0.0,plyer==2.0.0,pymongo==3.12.1,requests==2.23.0
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -88,13 +88,13 @@ android.presplash_color = #FFFFFF
 android.permissions = INTERNET,WRITE_EXTERNAL_STORAGE,READ_EXTERNAL_STORAGE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 30
+android.api = 31
 
 # (int) Minimum API your APK will support.
 #android.minapi = 21
 
 # (int) Android SDK version to use
-#android.sdk = 20
+android.sdk = 24
 
 # (str) Android NDK version to use
 #android.ndk = 19b
